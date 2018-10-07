@@ -1,0 +1,31 @@
+a{
+    color:black;
+    text-decoration:none;
+  }
+  
+a:hover{
+    color:pink;
+    text-decoration:none;
+  }
+
+.newsbox{
+    border:1px solid #777777;
+    margin: 10px;
+    padding: 10px;
+    float:left;
+    width: 50%;
+}
+
+.stockInfoExpand{
+  width: 100%;
+  padding-top: 2%;
+}
+
+.content{
+  width: 75%;
+  float:left;
+}
+
+.addStockButton{
+  float:right;
+}
