@@ -5,7 +5,7 @@ const showAPI = function() {
   const buttonVal = $(this).text(); //this gets the text from the button that was just clicked
   console.log(buttonVal); //this logs it to console so you can see
 
-   var apiurl = `http://api.iextrading.com/1.0/stock/${buttonVal}/batch?types=quote,logo,price,news`;
+   var apiurl = `https://api.iextrading.com/1.0/stock/${buttonVal}/batch?types=quote,logo,price,news`;
   $.ajax({
     url: apiurl,
     method: "GET"
