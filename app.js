@@ -11,6 +11,8 @@ $(document).ready(function() {
 
   const clickMe = function() {
     const buttonVal = $('#stockButton').text();
+
+
     console.log(buttonVal);
   
     var apiurl = `http://api.iextrading.com/1.0/stock/${buttonVal}/batch?types=quote,logo,price,news`;
