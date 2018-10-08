@@ -1,12 +1,11 @@
 //Global scope variables and functions//
-const stockList = ["goog", "msft", "ibm", "goog"];
-
-const buttonVal = $(this).text();
+const stockList = ["aapl", "msft", "ibm", "goog"];
 
 const showAPI = function() {
-  console.log(buttonVal);
+  const buttonVal = $(this).text(); //this gets the text from the button that was just clicked
+  console.log(buttonVal); //this logs it to console so you can see
 
-  var apiurl = `http://api.iextrading.com/1.0/stock/${buttonVal}/batch?types=quote,logo,price,news`;
+   var apiurl = `http://api.iextrading.com/1.0/stock/${buttonVal}/batch?types=quote,logo,price,news`;
   $.ajax({
     url: apiurl,
     method: "GET"
@@ -16,9 +15,7 @@ const showAPI = function() {
     const stockInfoExpand = $(".stockInfoExpand");
     stockInfoExpand.html("");
     const companyLogo = r.logo.url;
-    stockInfoExpand.append(
-      `<img src="${companyLogo}" width="100px"></img><br>`
-    );
+    stockInfoExpand.append(`<img src="${companyLogo}" width="100px"></img><br>`);
     const companyName = r.quote.companyName;
     stockInfoExpand.append(`<h1>${companyName}</h1>`);
     const companyPrice = r.price;
@@ -33,14 +30,14 @@ const showAPI = function() {
         `<a href="${newsURL}" target="blank"><div class="newsbox"><h3>${newsHeadline}</h3><p>${newsSource}</p><p>${newsSummary}</p></div></a>`
       );
     }
-  });
+  }); 
 };
 
 const makeStockButtons = function() {
   for (let i = 0; i < stockList.length; i++) {
     var UC = stockList[i].toUpperCase();
-    let buttonHTML = `<button id = "stockButton" val="${UC}">${UC}</button>&nbsp;`;
-    $(buttonHTML).on("click", showAPI);
+    let buttonHTML = $(`<button id = "stockButton" val="${UC}">${UC}</button>&nbsp;`);
+    buttonHTML.on("click", showAPI);
     $(".content").append(buttonHTML);
   }
 };
@@ -59,9 +56,11 @@ const newButton = function() {
     for (let i = 0; i < validationList.length; i++) {
       if (userSymbolUC === validationList[i].symbol) {
         console.log(userSymbolUC);
-        $(".newButtons").append(
+        let newButtonHTML= $(
           `<button id = "stockButton" val="${userSymbolUC}">${userSymbolUC}</button>&nbsp;`
         );
+        newButtonHTML.on("click", showAPI);
+        $(".newButtons").append(newButtonHTML);
         return;
       } else {
         $("#userSymbol").val("");
