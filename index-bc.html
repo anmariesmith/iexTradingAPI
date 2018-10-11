@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iexTradingAPI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon-stock.png">
+</head>
+
+<body background="pink_rice.png">
+
+    <div class="bg-light jumbotron">
+        <h1 class="display-4">Welcome to my Stock Trading App!</h1>
+        <p class="lead">select a button below to gain access to information on those related stocks. </p>
+        <hr class="my-4">
+        <p>
+            <div class="contentStock">
+                <div class="newButtons"></div>
+            </div>
+        </p>
+        <div class="addStockButton">
+                <input id="userSymbol" class="ml-2" placeholder="add stock symbol here" /><button class="btn ml-3" id="addButton">Add</button>
+            </div>
+    </div>
+
+    <div class="container-cust container border bg-light" style="margin-top:30px">
+            <div class="row ">
+                <div class="col-md-12">
+                <h2 class="h2-custom pt-3 pl-3"><strong>Stock Info</strong></h2>
+                <hr />
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                            <div class="stockInfoExpand mb-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class= "row ">
+                    <footer class="footer mt-2">
+                            <div class="container footer1">
+                              <span class="text-light">Copyright ©</span>
+                            </div>
+                          </footer>
+            </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

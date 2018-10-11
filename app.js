@@ -15,11 +15,11 @@ const showAPI = function() {
     const stockInfoExpand = $(".stockInfoExpand");
     stockInfoExpand.html("");
     const companyLogo = r.logo.url;
-    stockInfoExpand.append(`<img src="${companyLogo}" width="100px"></img><br>`);
+    stockInfoExpand.append(`<img src="${companyLogo}" class="ml-3" width="100px"></img><br>`);
     const companyName = r.quote.companyName;
-    stockInfoExpand.append(`<h1>${companyName}</h1>`);
+    stockInfoExpand.append(`<h1 class="ml-3">${companyName}</h1>`);
     const companyPrice = r.price;
-    stockInfoExpand.append(`<h4>Current Price: $${companyPrice}(USD)</h4>`);
+    stockInfoExpand.append(`<h4 class="ml-3 mb-3">Current Price: $${companyPrice}(USD)</h4>`);
 
     for (let i = 0; i < r.news.length; i++) {
       newsHeadline = r.news[i].headline;
@@ -35,16 +35,16 @@ const showAPI = function() {
 
 const makeStockButtons = function() {
   for (let i = 0; i < stockList.length; i++) {
-    var UC = stockList[i].toUpperCase();
-    let buttonHTML = $(`<button id = "stockButton" val="${UC}">${UC}</button>&nbsp;`);
+    var upperCase = stockList[i].toUpperCase();
+    let buttonHTML = $(`<button class="btn ml-2 id = "stockButton" val="${upperCase}">${upperCase}</button>`);
     buttonHTML.on("click", showAPI);
-    $(".content").append(buttonHTML);
+    $(".contentStock").append(buttonHTML);
   }
 };
 
 makeStockButtons();
 
-const newButton = function() {
+const makeButton= function() {
   const userSymbol = $("#userSymbol").val();
   const userSymbolUC = userSymbol.toUpperCase();
   var apiSymbols = "https://api.iextrading.com/1.0/ref-data/symbols";
@@ -57,7 +57,7 @@ const newButton = function() {
       if (userSymbolUC === validationList[i].symbol) {
         console.log(userSymbolUC);
         let newButtonHTML= $(
-          `<button id = "stockButton" val="${userSymbolUC}">${userSymbolUC}</button>&nbsp;`
+          `<button class="btn ml-2 mb-3" id="stockButton" val="${userSymbolUC}">${userSymbolUC}</button>&nbsp;`
         );
         newButtonHTML.on("click", showAPI);
         $(".newButtons").append(newButtonHTML);
@@ -68,4 +68,4 @@ const newButton = function() {
     }
   });
 };
-$("#addButton").on("click", newButton);
+$("#addButton").on("click", makeButton);

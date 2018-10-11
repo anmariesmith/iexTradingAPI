@@ -12,13 +12,17 @@ a:hover{
     border:1px solid #777777;
     margin: 10px;
     padding: 10px;
-    float:left;
-    width: 50%;
+}
+
+.btn:hover{
+  background: pink;
 }
 
 .stockInfoExpand{
   width: 100%;
   padding-top: 5%;
+  border: 1px solid lightgrey;
+  overflow: auto;
 }
 
 .content{
@@ -26,6 +30,53 @@ a:hover{
   float:left;
 }
 
-.addStockButton{
+/* .addStockButton{
   float:right;
+  margin-right:3%;
+} */
+
+
+.content {
+  background-color: lightblue;
+  width: 100%;
+  position: fixed;
+  margin-top: 0;
+  padding:1%;
+  margin-bottom: 40px;
+}
+
+.container-cust {
+  margin-bottom: 100px;
+}
+
+#userSymbol{
+  height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: 
+      border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Sticky Footer  */
+.footer1 {
+  width: auto;
+  max-width: 980px;
+  padding: 0 15px;
+
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 50px;
+  background-color: rgb(230, 191, 197);
+  border-top: 3px solid white;
+  text-align: center;
 }
