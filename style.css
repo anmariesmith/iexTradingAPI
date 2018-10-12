@@ -80,3 +80,11 @@ a:hover{
   border-top: 3px solid white;
   text-align: center;
 }
+
+#centerFooter {
+  left: 0px;
+}
+
+img{
+  position:absolute;
+}
